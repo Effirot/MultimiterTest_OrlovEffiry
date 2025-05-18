@@ -9,22 +9,22 @@ namespace Effirot.Test
     public class MultimeterValueView : MonoBehaviour
     {
         [SerializeField]
-        private MultimiterTorqueInteractor multimiterTorque;
+        private MultimiterTorqueInteractor _multimiterTorque;
         [SerializeField]
-        private string stringFormat = "000.00";
+        private string _stringFormat = "000.00";
 
-        private TMP_Text label;
-        private float smoothedValue = 0;
+        private TMP_Text _label;
+        private float _smoothedValue = 0;
 
         private void Awake()
         {
-            label = GetComponent<TMP_Text>();
+            _label = GetComponent<TMP_Text>();
         }
         private void Update()
         {
-            smoothedValue = Mathf.Lerp(smoothedValue, multimiterTorque.activeState.value, 10 * Time.deltaTime);
+            _smoothedValue = Mathf.Lerp(_smoothedValue, _multimiterTorque.activeState.value, 10 * Time.deltaTime);
 
-            label.text = smoothedValue.ToString(stringFormat);
+            _label.text = _smoothedValue.ToString(_stringFormat);
         }
     }
 }

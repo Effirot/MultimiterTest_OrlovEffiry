@@ -20,11 +20,11 @@ namespace Effirot.Test.SelectionSource
         }
 
         [SerializeField]
-        private InputActionReference mouseClickAction = null;
+        private InputActionReference _mouseClickAction = null;
         [SerializeField]
-        private InputActionReference mousePositionAction = null;
+        private InputActionReference _mousePositionAction = null;
         [SerializeField]
-        private InputActionReference mouseScrollAction = null;
+        private InputActionReference _mouseScrollAction = null;
 
         private Collider selected = null;
         private Vector2 mousePosition = new Vector2();
@@ -32,33 +32,33 @@ namespace Effirot.Test.SelectionSource
 
         private void Start()
         {
-            mouseClickAction.action.Enable();
-            mouseClickAction.action.started += OnMouseClick_Event;
-            mouseClickAction.action.performed += OnMouseClick_Event;
-            mouseClickAction.action.canceled += OnMouseClick_Event;
+            _mouseClickAction.action.Enable();
+            _mouseClickAction.action.started += OnMouseClick_Event;
+            _mouseClickAction.action.performed += OnMouseClick_Event;
+            _mouseClickAction.action.canceled += OnMouseClick_Event;
 
-            mousePositionAction.action.Enable();
-            mousePositionAction.action.started += OnMousePosition_Event;
-            mousePositionAction.action.performed += OnMousePosition_Event;
-            mousePositionAction.action.canceled += OnMousePosition_Event;
+            _mousePositionAction.action.Enable();
+            _mousePositionAction.action.started += OnMousePosition_Event;
+            _mousePositionAction.action.performed += OnMousePosition_Event;
+            _mousePositionAction.action.canceled += OnMousePosition_Event;
 
-            mouseScrollAction.action.Enable();
-            mouseScrollAction.action.performed += OnMouseScroll_Event;
+            _mouseScrollAction.action.Enable();
+            _mouseScrollAction.action.performed += OnMouseScroll_Event;
         }
         private void OnDestroy()
         {
-            mouseClickAction.action.Disable();
-            mouseClickAction.action.started -= OnMouseClick_Event;
-            mouseClickAction.action.performed -= OnMouseClick_Event;
-            mouseClickAction.action.canceled -= OnMouseClick_Event;
+            _mouseClickAction.action.Disable();
+            _mouseClickAction.action.started -= OnMouseClick_Event;
+            _mouseClickAction.action.performed -= OnMouseClick_Event;
+            _mouseClickAction.action.canceled -= OnMouseClick_Event;
 
-            mousePositionAction.action.Disable();
-            mousePositionAction.action.started -= OnMousePosition_Event;
-            mousePositionAction.action.performed -= OnMousePosition_Event;
-            mousePositionAction.action.canceled -= OnMousePosition_Event;
+            _mousePositionAction.action.Disable();
+            _mousePositionAction.action.started -= OnMousePosition_Event;
+            _mousePositionAction.action.performed -= OnMousePosition_Event;
+            _mousePositionAction.action.canceled -= OnMousePosition_Event;
 
-            mouseScrollAction.action.Disable();
-            mouseScrollAction.action.performed -= OnMouseScroll_Event;
+            _mouseScrollAction.action.Disable();
+            _mouseScrollAction.action.performed -= OnMouseScroll_Event;
         }
         private void FixedUpdate()
         {

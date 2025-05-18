@@ -10,48 +10,48 @@ namespace Effirot.Test.SelectionSource
     public class SelectionOutline : MonoBehaviour
     {
         [SerializeField]
-        private Material outlineMaterial;
+        private Material _outlineMaterial;
         [SerializeField, Range(0.1f, 30f)]
-        private float smoothSpeed = 5;
+        private float _smoothSpeed = 5;
 
 
-        private MeshRenderer meshRenderer;
-        private Material materialInstance;
+        private MeshRenderer _meshRenderer;
+        private Material _materialInstance;
 
-        private bool isSelected;
-        private float transparencyBlend = 0;
+        private bool _isSelected;
+        private float _transparencyBlend = 0;
 
         private void Awake()
         {
-            meshRenderer = GetComponent<MeshRenderer>();
-            materialInstance = Instantiate(outlineMaterial);
+            _meshRenderer = GetComponent<MeshRenderer>();
+            _materialInstance = Instantiate(_outlineMaterial);
         }
         private void OnDestroy()
         {
-            Destroy(materialInstance);
+            Destroy(_materialInstance);
         }
         private void LateUpdate()
         {
-            transparencyBlend = Mathf.Lerp(transparencyBlend, isSelected ? 1 : 0, smoothSpeed * Time.deltaTime);
-            materialInstance.SetFloat("Transparency", transparencyBlend);
+            _transparencyBlend = Mathf.Lerp(_transparencyBlend, _isSelected ? 1 : 0, _smoothSpeed * Time.deltaTime);
+            _materialInstance.SetFloat("Transparency", _transparencyBlend);
         }
 
         private void OnMouseOver()
         {
-            if (!isSelected)
+            if (!_isSelected)
             {
-                isSelected = true;
+                _isSelected = true;
 
-                meshRenderer.sharedMaterials = meshRenderer.sharedMaterials.Append(materialInstance).ToArray();
+                _meshRenderer.sharedMaterials = _meshRenderer.sharedMaterials.Append(_materialInstance).ToArray();
             }
         }
         private void OnMouseExit()
         {
-            transparencyBlend = 0;
+            _transparencyBlend = 0;
 
-            isSelected = false;
+            _isSelected = false;
 
-            meshRenderer.sharedMaterials = meshRenderer.sharedMaterials.Where(mat => mat != materialInstance).ToArray();
+            _meshRenderer.sharedMaterials = _meshRenderer.sharedMaterials.Where(mat => mat != _materialInstance).ToArray();
         }
     }
 }

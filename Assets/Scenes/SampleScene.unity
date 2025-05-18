@@ -1151,7 +1151,7 @@ GameObject:
   - component: {fileID: 783639742}
   - component: {fileID: 783639741}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2134,8 +2134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ed59945bf71a342842573d04af161c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multimiterTorque: {fileID: 8131113100179335500}
-  stringFormat: 000.00
+  _multimiterTorque: {fileID: 8131113100179335500}
+  _stringFormat: 000.00
 --- !u!114 &1529299380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,12 +2412,12 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: -7
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2767,12 +2767,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55459a5e2b045ca42bb5c943fa9419b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multimeterStates:
+  _multimeterStates:
   - {fileID: 1512126237}
   - {fileID: 1012774078}
   - {fileID: 1926824666}
   - {fileID: 1822095580}
-  stringFormat: 000.00
+  _stringFormat: 000.00
 --- !u!114 &1891269724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3542,8 +3542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b950a5698b28c94ebca633a22d5375d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMaterial: {fileID: 2100000, guid: 32ba36ad29148954dbb53ddb17013d91, type: 2}
-  smoothSpeed: 5
+  _outlineMaterial: {fileID: 2100000, guid: 32ba36ad29148954dbb53ddb17013d91, type: 2}
+  _smoothSpeed: 5
 --- !u!114 &8131113100179335500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3556,14 +3556,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638eba637ee977a48a64ecd2a9b770bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multimeterStates:
+  _multimeterStates:
   - {fileID: 1158980488}
   - {fileID: 1512126237}
   - {fileID: 1012774078}
   - {fileID: 1926824666}
   - {fileID: 1822095580}
-  isLooped: 1
-  torquePoint: {fileID: 1254483458}
+  _torquePoint: {fileID: 1254483458}
   onStateChanged:
     m_PersistentCalls:
       m_Calls: []
