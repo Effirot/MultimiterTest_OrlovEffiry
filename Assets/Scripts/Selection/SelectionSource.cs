@@ -72,7 +72,6 @@ namespace Effirot.Test.SelectionSource
                 eventSystem.RaycastAll(data, raycastResults);
 
                 isUIOvered = raycastResults.Any();
-                Debug.Log(isUIOvered);
             }
 
             var ray = Camera.main.ScreenPointToRay(mousePosition);
