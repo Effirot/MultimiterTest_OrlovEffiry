@@ -14,6 +14,8 @@ namespace Effirot.Test
         public bool selected = false;
         [SerializeField]
         public UnityEvent onSelected = new();
+        [SerializeField]
+        public UnityEvent onDeselected = new();
 
         public abstract float value { get; }
 

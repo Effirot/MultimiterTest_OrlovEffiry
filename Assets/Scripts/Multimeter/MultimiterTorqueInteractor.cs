@@ -42,6 +42,7 @@ namespace Effirot.Test
             }
 
             oldState.selected = false;
+            oldState.onDeselected.Invoke();
 
             var newState = activeState;
             newState.selected = true;
